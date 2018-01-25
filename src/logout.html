@@ -2,13 +2,90 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Hotel Porto Bello - Hotspot - Logout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <script src="js/main.js"></script>
+    <style type="text/css">
+        <!--
+        textarea,input,select {
+            background-color: #FDFBFB;
+            border: 1px #BBBBBB solid;
+            padding: 2px;
+            margin: 1px;
+            font-size: 14px;
+            color: #808080;
+        }
+        .tabula{
+            border-width: 1px; 
+            border-collapse: collapse; 
+            border-color: #c1c1c1; 
+            background-color: transparent;
+            font-family: verdana;
+            font-size: 11px;
+        }
+
+        body{ color: #737373; font-size: 12px; font-family: verdana; }
+
+        a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
+        a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
+        img {border: none;}
+        td { font-size: 12px; padding: 4px;}
+        -->
+    </style>
 </head>
 <body>
-    
+    <script language="JavaScript">
+        <!--
+        function openLogin() {
+            if (window.name != 'hotspot_logout') return true;
+            open('$(link-login)', '_blank', '');
+            window.close();
+            return false;
+        }
+        //-->
+    </script>
+
+    <table width="100%" height="100%">
+        <tr>
+            <td align="center" valign="middle">
+                <p><font size="3"><strong>Voc&ecirc; saiu do sistema.</strong></font></p>
+                <p><font size="2"><strong>Obrigado por utilizar nossos servi&ccedil;os.</strong></font><br><br></p>
+                <table class="tabula" border="1">  
+                    <tr>
+                        <td width="113" align="right"><strong>Usu&aacute;rio:</strong></td>
+                        <td width="220">$(username)</td></tr>
+                    <tr>
+                        <td align="right"><strong>Endere&ccedil;o IP:</strong></td>
+                        <td>$(ip)</td></tr>
+                    <tr>
+                        <td align="right"><strong>Endere&ccedil;o MAC:</strong></td>
+                        <td>$(mac)</td></tr>
+                    <tr>
+                        <td align="right"><strong>Dura&ccedil;&atilde;o:</strong></td>
+                        <td>$(uptime)</td>
+                    </tr>
+                    $(if session-time-left)
+                    <tr>
+                        <td align="right"><strong>Tempo restante:</strong></td>
+                        <td>$(session-time-left)</td>
+                    </tr>
+                    $(endif)
+                    <tr>
+                        <td align="right"><strong>bytes up/down:</strong></td>
+                        <td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+                    </tr>
+                </table>
+                <br>
+                <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                    <input type="submit" value="Entrar">
+                </form>
+            </td>
+        </tr>
+    </table>
 </body>
-</html>
+</html>        
